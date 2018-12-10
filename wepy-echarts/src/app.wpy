@@ -1,0 +1,28 @@
+<style lang="less">
+  @import './styles/style.less';
+</style>
+
+<script>
+  import wepy from 'wepy';
+  import 'wepy-async-function';
+  export default class extends wepy.app {
+    config = {
+      pages: [
+        'pages/chart',
+        'pages/index',
+      ],
+      window: {
+        backgroundTextStyle: '#131313',
+        navigationBarBackgroundColor: '#3bcf84',
+        navigationBarTitleText: 'echarts',
+        navigationBarTextStyle: '#fff',
+        backgroundColor: '#fff'
+      },
+    };
+    constructor() {
+      super();
+      this.use('requestfix');
+      this.use('promisify');
+    }
+  }
+</script>
